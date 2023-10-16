@@ -43,7 +43,6 @@ export class AlocateComponent implements OnInit {
   {
     this.roomCategory = roomAllocateData.rid;
     this.vacantRoomNo = roomAllocateData.vacantRoomNo;
-    console.log(this.roomCategory);
   }
 
 

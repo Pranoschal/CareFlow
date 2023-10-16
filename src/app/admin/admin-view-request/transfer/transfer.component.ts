@@ -47,8 +47,6 @@ export class TransferComponent implements OnInit {
     fname: string,
     lname: string
   ) {
-    // const fromRoomId = this.du.map[fromRoom];
-    // const toRoomId = this.du.map[toRoom];
     if (fromRoomID == toRoomID) {
       this.adminServ.getRooms(toRoomID).subscribe((res) => {
         for (let i = 0; i < res.room.length; i++) {
