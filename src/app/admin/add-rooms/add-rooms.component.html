@@ -1,0 +1,58 @@
+<!-- <h1>Add rooms: </h1>
+<div class="row">
+  <div class="col-lg-6 col-sx-14"></div>
+  <div class="col-lg-6 col-sx-14"></div>
+</div>
+Select room category:
+<select class="form-select" name="id" [(ngModel)]="id" (click)="onShow()" >
+  <option value="0" selected>Select a room</option>
+  <option value="1">Economy Room</option>
+  <option value="2">Economy Plus Room</option>
+  <option value="3">Twin Sharing Room</option>
+  <option value="4">Deluxe Room</option>
+  <option value="5">Premium Deluxe</option>
+</select>
+
+<button (click)="Add()">Add+</button>
+<button (click)="Remove()">Remove-</button>
+
+Enter the amount: <input type="text" name="val" placeholder="Enter the value" [(ngModel)]="val">
+<button (click)="Add()">Add</button>
+<button (click)="Remove()">Remove</button>
+
+Enter the new price: <input type="number" [(ngModel)]="price">
+<button (click)="editPrice()">Edit</button> -->
+
+
+<div class="container mainConatiner mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-uppercase text-center mb-lg-5">Add Rooms</h1>
+            <form>
+                <div class="form-group">
+                    <label for="roomCategory">Select room category:</label>
+                    <select class="form-control my-2"  name="id" [(ngModel)]="id" (click)="onShow()" >
+                        <option value="0" selected>Select a room</option>
+                        <option value="1">Economy Room</option>
+                        <option value="2">Economy Plus Room</option>
+                        <option value="3">Twin Sharing Room</option>
+                        <option value="4">Deluxe Room</option>
+                        <option value="5">Premium Deluxe</option>
+                    </select>
+                </div>
+                <div class="form-group my-2">
+                    <label for="amount">Enter the amount:</label>
+                    <input type="text" class="form-control my-2" id="amount" name="val" placeholder="Enter the value" [(ngModel)]="val">
+                </div>
+                <button type="button" class="btn btn-outline-primary btn-block mt-2 " (click)="Add()">Add</button>
+                <!-- <div class="form-group mt-2 ">
+                    <label for="newPrice">Enter the new price:</label>
+                    <input type="number" class="form-control" id="newPrice" [(ngModel)]="price">
+                </div>
+                <button type="button" class="btn btn-outline-success btn-block my-2" (click)="editPrice()">Edit</button> -->
+            </form>
+        </div>
+    </div>
+</div>
+
+

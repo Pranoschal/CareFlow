@@ -1,0 +1,54 @@
+{
+  "admin": [
+    {
+      "id": 1,
+      "name": "Pranoschal Saikia",
+      "email": "pranoschal@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "name": "Faizan",
+      "email": "faizan@gmail.com",
+      "password": "123@Azs4"
+    }
+  ],
+  "patient": [
+    {
+      "fname": "Pranoschal",
+      "lname": "Saikia",
+      "contact": 1283473264,
+      "email": "pranoschal@gmail.com",
+      "password": "Ilove@3000",
+      "address": "P.O. Jalan Nagar,Paltan Bazaar",
+      "city": "Dibrugarh",
+      "state": "Assam",
+      "country": "India",
+      "pincode": 786005,
+      "id": 1,
+      "age": 23,
+      "bloodGroup": "O+",
+      "roomId": null,
+      "roomName": "",
+      "roomNo": null
+    },
+    {
+      "fname": "Aman",
+      "lname": "Kumar",
+      "age": 23,
+      "contact": 1234567890,
+      "email": "aman@gmail.com",
+      "password": "123@Azs4",
+      "address": "",
+      "city": "",
+      "state": "",
+      "country": "",
+      "pincode": null,
+      "bloodGroup": "B+",
+      "id": 2,
+      "roomId": null,
+      "roomName": "",
+      "roomNo": null
+    }
+  ]
+}

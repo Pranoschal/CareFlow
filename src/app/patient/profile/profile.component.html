@@ -1,0 +1,435 @@
+<!-- <div>
+  <p>Name : {{ profileData[0].fname }} {{ profileData[0].lname }}</p>
+  <p *ngIf="profileData[0].age">Age : {{ profileData[0].age }}</p>
+  <p>Email : {{ profileData[0].email }}</p>
+  <p>Contact : {{ profileData[0].contact }}</p>
+  <p *ngIf="profileData[0].address">Address : {{ profileData[0].address }}</p>
+  <p *ngIf="profileData[0].city">City : {{ profileData[0].city }}</p>
+  <p *ngIf="profileData[0].state">State : {{ profileData[0].state }}</p>
+  <p *ngIf="profileData[0].country">Country : {{ profileData[0].country }}</p>
+  <p *ngIf="profileData[0].pincode">Pincode : {{ profileData[0].pincode }}</p>
+</div> -->
+
+<div>
+  <!-- Button trigger modal -->
+  <!-- <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModal"
+  >
+    EDIT
+  </button> -->
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">
+            Edit your profile
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <form (ngSubmit)="onEditFinish()" [formGroup]="edit_form">
+          <div class="modal-body">
+            <div class="input-box my-4" id="input1">
+              <label class="form-label" for="fname">First Name: </label>
+              <input
+                class="form-control"
+                type="text"
+                formControlName="fname"
+                name="fname"
+                id="fname"
+                [(ngModel)]="registered.fname"
+                placeholder="Enter First Name"
+                required
+              />
+              <div
+                style="color: red"
+                *ngIf="
+                  edit_form.controls['fname'].invalid &&
+                  (edit_form.controls['fname'].touched ||
+                    edit_form.controls['fname'].dirty)
+                "
+              >
+                <div *ngIf="edit_form.controls['fname'].errors?.['required']">
+                  *First Name Can't Be Empty.
+                </div>
+              </div>
+
+              <label class="form-label" for="lname">Last Name: </label>
+              <input
+                class="form-control"
+                type="text"
+                formControlName="lname"
+                name="lname"
+                id="lname"
+                [(ngModel)]="registered.lname"
+                placeholder="Enter Last Name"
+                required
+              />
+              <div
+                style="color: red"
+                *ngIf="
+                  edit_form.controls['lname'].invalid &&
+                  (edit_form.controls['lname'].touched ||
+                    edit_form.controls['lname'].dirty)
+                "
+              >
+                <div *ngIf="edit_form.controls['lname'].errors?.['required']">
+                  *Last Name Can't Be Empty
+                </div>
+              </div>
+            </div>
+            <div class="input-box my-4">
+              <label class="form-label" for="contact">Contact No: </label>
+              <input
+                class="form-control"
+                type="number"
+                formControlName="contact"
+                name="contact"
+                id="contact"
+                [(ngModel)]="registered.contact"
+                placeholder="Enter Contact No"
+                required
+              />
+              <div
+                style="color: red"
+                *ngIf="
+                  edit_form.controls['contact'].invalid &&
+                  (edit_form.controls['contact'].touched ||
+                    edit_form.controls['contact'].dirty)
+                "
+              >
+                <div *ngIf="edit_form.controls['contact'].errors?.['required']">
+                  *Contact Number Can't Be Empty
+                </div>
+                <div *ngIf="edit_form.controls['contact'].errors?.['pattern']">
+                  *Contact Number Must Be 10 Digits
+                </div>
+              </div>
+            </div>
+            <!-- <div class="input-box my-4">
+              <label class="form-label" for="email">Email: </label>
+              <input
+                class="form-control"
+                type="email"
+                formControlName="email"
+                name="email"
+                id="email"
+                [(ngModel)]="registered.email"
+                placeholder="Enter Email"
+                (ngModelChange)="check_email_taken()"
+                required
+              />
+              <div
+                style="color: red"
+                *ngIf="
+                  edit_form.controls['email'].invalid &&
+                  (edit_form.controls['email'].touched ||
+                    edit_form.controls['email'].dirty)
+                "
+              >
+                <div *ngIf="edit_form.controls['email'].errors?.['required']">
+                  *Email Can't Be Empty
+                </div>
+                <div *ngIf="edit_form.controls['email'].errors?.['pattern']">
+                  *Enter Valid Email
+                </div>
+              </div>
+              <div *ngIf="this.lr.isPatientRegistered">
+                *Email Already Registered
+              </div>
+            </div> -->
+            <div class="input-box my-4">
+              <label class="form-label" for="bloodGroup">Blood Group: </label>
+              <input
+                class="form-control"
+                type="text"
+                formControlName="bloodGroup"
+                name="bloodGroup"
+                id="bloodGroup"
+                [(ngModel)]="registered.bloodGroup"
+                placeholder="Enter Blood Group"
+              />
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-outline-primary my-4"
+              (click)="this.du.toggleAdditionalFields()"
+            >
+              <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <div *ngIf="this.du.showAdditionFields">
+              <div class="input-box my-4">
+                <label class="form-label" for="age">Age: </label>
+                <input
+                  class="form-control"
+                  type="number"
+                  formControlName="age"
+                  name="age"
+                  id="age"
+                  [(ngModel)]="registered.age"
+                  placeholder="Enter Age"
+                />
+              </div>
+
+              <div class="input-box my-4">
+                <label class="form-label" for="address"
+                  >Permanent address:
+                </label>
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="address"
+                  name="address"
+                  id="address"
+                  [(ngModel)]="registered.address"
+                  placeholder="Enter permanent address"
+                />
+              </div>
+
+              <div class="input-box my-4">
+                <label class="form-label" for="city">City: </label>
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="city"
+                  name="city"
+                  id="city"
+                  [(ngModel)]="registered.city"
+                  placeholder="Enter Your City"
+                />
+              </div>
+
+              <div class="input-box my-4">
+                <label class="form-label" for="state">State: </label>
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="state"
+                  name="state"
+                  id="state"
+                  [(ngModel)]="registered.state"
+                  placeholder="Enter Your State"
+                />
+              </div>
+
+              <div class="input-box my-4">
+                <label class="form-label" for="country">Country: </label>
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="country"
+                  name="country"
+                  id="country"
+                  [(ngModel)]="registered.country"
+                  placeholder="Enter Your Country"
+                />
+              </div>
+
+              <div class="input-box my-4">
+                <label class="form-label" for="pincode">Pincode: </label>
+                <input
+                  class="form-control"
+                  type="number"
+                  formControlName="pincode"
+                  name="pincode"
+                  id="pincode"
+                  [(ngModel)]="registered.pincode"
+                  placeholder="Enter Your Pincode"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Save changes
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="h-100 gradient-custom-2">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-7">
+        <div class="card">
+          <div
+            class="rounded-top text-white d-flex flex-row"
+            style="background-color: #000; height: 200px"
+          >
+            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px">
+              <img
+                src="../../../assets/user.jfif"
+                alt="Generic placeholder image"
+                class="img-fluid img-thumbnail mt-4 mb-2"
+                style="width: 150px; z-index: 1"
+              />
+            </div>
+
+            <div class="ms-3" style="margin-top: 80px">
+              <h5>{{ profileData[0].fname }} {{ profileData[0].lname }}</h5>
+
+              <div class="d-flex">
+                <i style="color:red ;" class="fa-solid fa-droplet me-2 mt-1"></i>
+                <p>{{ profileData[0].bloodGroup }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="p-4 text-black" style="background-color: #f8f9fa"></div> -->
+
+          <div class="card-body p-4 text-black">
+            <div class="mb-5">
+              <div class="p-4" style="background-color: #c5d7ea">
+
+
+                <div class="d-flex">
+                  <i
+                    *ngIf="profileData[0].age"
+                    class="fa-solid fa-image-portrait me-2 mt-1"
+                  ></i>
+                  <p class="font-italic mb-1" *ngIf="profileData[0].age">
+                    <b> Age: </b> {{ profileData[0].age }}
+                  </p>
+                </div>
+                <div class="d-flex">
+                  <i class="fa-solid fa-phone me-2 mt-1"></i>
+
+                  <p class="font-italic mb-1">
+                    <b>Phone No:</b> {{ profileData[0].contact }}
+                  </p>
+                </div>
+
+                <div class="d-flex">
+                  <i class="fa-solid fa-envelope me-2 mt-1"></i>
+
+                  <p class="font-italic mb-1">
+                    <b>Email:</b> {{ profileData[0].email }}
+                  </p>
+                </div>
+
+                <div class="d-flex">
+                  <i
+                    *ngIf="profileData[0].address"
+                    class="fa-solid fa-location-dot me-2 mt-1"
+                  ></i>
+
+                  <p *ngIf="profileData[0].address" class="font-italic mb-1">
+                    <b> Addreess:</b> {{ profileData[0].address }}
+                  </p>
+                </div>
+
+                <div class="d-flex">
+                  <i
+                    *ngIf="profileData[0].city"
+                    class="fa-solid fa-location-dot me-2 mt-1"
+                  ></i>
+
+                  <p *ngIf="profileData[0].city" class="font-italic mb-1">
+                    <b> City:</b> {{ profileData[0].city }}
+                  </p>
+                </div>
+
+                <div class="d-flex">
+                  <i
+                    *ngIf="profileData[0].state"
+                    class="fa-solid fa-location-dot me-2 mt-1"
+                  ></i>
+
+                  <p *ngIf="profileData[0].state" class="font-italic mb-1">
+                    <b> State:</b> {{ profileData[0].state }}
+                  </p>
+                </div>
+
+                <div class="d-flex">
+                  <i
+                    *ngIf="profileData[0].country"
+                    class="fa-solid fa-location-dot me-2 mt-1"
+                  ></i>
+
+                  <p *ngIf="profileData[0].country" class="font-italic mb-1">
+                    <b> Country:</b> {{ profileData[0].country }}
+                  </p>
+                </div>
+                <div class="d-flex">
+                  <i
+                    *ngIf="profileData[0].pincode"
+                    class="fa-solid fa-location-dot me-2 mt-1"
+                  ></i>
+
+                  <p *ngIf="profileData[0].pincode" class="font-italic mb-1">
+                    <b> Pincode:</b> {{ profileData[0].pincode }}
+                  </p>
+                </div>
+
+
+                <div class="d-flex">
+                  <i
+                    *ngIf="profileData[0].roomName"
+                    class="fa-solid fa-image-portrait me-2 mt-1"
+                  ></i>
+                  <p class="font-italic mb-1" *ngIf="profileData[0].roomName">
+                    <b> Room Category: </b> {{ profileData[0].roomName }}
+                  </p>
+                </div>
+
+
+                <div class="d-flex">
+                  <i
+                    *ngIf="profileData[0].roomNo"
+                    class="fa-solid fa-image-portrait me-2 mt-1"
+                  ></i>
+                  <p class="font-italic mb-1" *ngIf="profileData[0].roomNo">
+                    <b> Room No: </b> {{ profileData[0].roomNo }}
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-small btn-outline-dark"
+            data-mdb-ripple-color="dark"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            style="z-index: 1"
+          >
+            <small> Edit/Add profile data</small>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

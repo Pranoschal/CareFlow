@@ -1,0 +1,113 @@
+<div class="d-flex my-4" id="sidebar">
+  <div
+    class="d-flex flex-column flex-shrink-0 p-3 bg-light"
+    style="width: 280px"
+  >
+    <!-- <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg> -->
+    <span class="fs-4">Available Rooms</span>
+    <!-- </a> -->
+    <hr />
+    `
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li id="card">
+        <a routerLink="economy" class="nav-link link-dark">
+          <svg class="bi me-2" width="16" height="16">
+            <use xlink:href="#speedometer2"></use>
+          </svg>
+          Economy
+        </a>
+      </li>
+      <li id="card">
+        <a routerLink="economy-plus" class="nav-link link-dark">
+          <svg class="bi me-2" width="16" height="16">
+            <use xlink:href="#table"></use>
+          </svg>
+          Economy Plus
+        </a>
+      </li>
+      <li id="card">
+        <a routerLink="twin-sharing" class="nav-link link-dark">
+          <svg class="bi me-2" width="16" height="16">
+            <use xlink:href="#grid"></use>
+          </svg>
+          Twin Sharing
+        </a>
+      </li>
+      <li class="nav-item" id="card">
+        <a routerLink="deluxe" class="nav-link link-dark">
+          <!-- <a routerLink="/deluxe" class="nav-link active" aria-current="page"> -->
+          <svg class="bi me-2" width="16" height="16">
+            <use xlink:href="Home"></use>
+          </svg>
+          Deluxe
+        </a>
+      </li>
+      <li id="card">
+        <a routerLink="premium" class="nav-link link-dark">
+          <svg class="bi me-2" width="16" height="16">
+            <use xlink:href="#people-circle"></use>
+          </svg>
+          Premium
+        </a>
+      </li>
+    </ul>
+    <hr />
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
+<div class="container mt-3">
+  <div class="mt-4 p-5 bg-primary text-white rounded mx-auto my-5 opacity-50">
+    <h2 style="text-align: center">
+      Your Comfort, Our Priority: Book Hospital Rooms With Ease
+    </h2>
+  </div>
+</div>
+<div class="container p-0">
+  <!-- Review Section -->
+  <section class="container mt-lg-5">
+    <h2 style="text-align: center">Customer Reviews</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">John Doe</h5>
+              <span><i class="fas fa-star text-warning"></i> 4.5</span>
+            </div>
+            <p class="card-text">
+              Great hospital! Excellent service and caring staff.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">Jane Smith</h5>
+              <span><i class="fas fa-star text-warning"></i> 5.0</span>
+            </div>
+            <p class="card-text">
+              I had a wonderful experience here. Highly recommended!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">Bob Johnson</h5>
+              <span><i class="fas fa-star text-warning"></i> 4.0</span>
+            </div>
+            <p class="card-text">
+              The hospital staff was very helpful during my stay.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

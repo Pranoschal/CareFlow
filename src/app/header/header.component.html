@@ -1,0 +1,139 @@
+<nav id="navbarComp" class="navbar navbar-expand-lg bg-body-tertiary pt-0" >
+  <div class="container-fluid " style="background-color: #e3f2fd; "  >
+    <img src="../../assets/hospital_icon.jpg" class="rounded-circle ms-2" alt="icon" width="20px" height="20px">
+    <a class="navbar-brand ms-2" routerLink="#">CareFlow</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="../../assets/hamburger.png" alt="" width="20px" height="20px">
+    </button>
+    <div class="collapse navbar-collapse container" id="navbarSupportedContent"
+      *ngIf="!this.lr.isPatientLoggedIn && !this.lr.isAdminLoggedIn">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link icon-link icon-link-hover" aria-current="page" routerLink="home" >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link icon-link icon-link-hover" routerLink="about" >About Us</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link icon-link icon-link-hover" routerLink="contacts" >Get In Touch</a>
+        </li>
+
+      </ul>
+      <form class="d-flex ms-auto " role="search">
+        <button type="button" class="btn btn-outline-primary me-3" (click)="login()">Login</button>
+
+        <button class="btn btn-outline-primary " type="submit" (click)="register()">Register</button>
+      </form>
+    </div>
+
+    <div class="collapse navbar-collapse container" id="navbarSupportedContent" *ngIf="this.lr.isPatientLoggedIn ">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link icon-link icon-link-hover" aria-current="page" routerLink="/patient/patient-home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link icon-link icon-link-hover" routerLink="/patient/patient-about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link icon-link icon-link-hover" routerLink="/patient/patient-contact">Contact</a>
+        </li>
+        <div class="nav-item">
+          <div class="dropdown">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false" id="viewReq">
+              Request
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="patient/rooms/economy">Room Allocation</a></li>
+              <li><a class="dropdown-item" routerLink="patient/patient-transfer">Room Transfer</a></li>
+              <li><a class="dropdown-item" routerLink="patient/patient-disharge">Room Discharge</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- <li class="nav-item">
+          <a class="nav-link icon-link icon-link-hover" aria-current="page" routerLink="/patient/patient-notification">Notification</a>
+        </li> -->
+
+        <div class="nav-item">
+          <div class="dropdown">
+            <button class="btn btn-secondary btn-sm dropdown-toggle mx-3" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false" id="viewReq">
+              <i class="bx bxs-user-circle"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/patient/patient-profile">Profile</a></li>
+              <hr />
+              <li><a class="dropdown-item" routerLink="login" (click)="logout()">Log out</a></li>
+              <li><a class="dropdown-item" routerLink="#">Delete account</a></li>
+            </ul>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <div class="collapse navbar-collapse container" id="navbarSupportedContent" *ngIf="this.lr.isAdminLoggedIn">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link icon-link icon-link-hover" aria-current="page" routerLink="/admin/admin-home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link icon-link icon-link-hover" routerLink="/admin/admin-about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link icon-link icon-link-hover" routerLink="/admin/admin-search">Search Patient</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link icon-link icon-link-hover" routerLink="/admin/admin-contacts">Contacts</a>
+        </li>
+
+        <div class="nav-item">
+          <div class="dropdown">
+            <button class="btn btn-secondary btn-sm dropdown-toggle " type="button" data-bs-toggle="dropdown"
+              aria-expanded="false" id="viewReq">
+              View Request
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/admin/admin-view-allocate">Room Allocate</a></li>
+              <li><a class="dropdown-item" routerLink="/admin/admin-view-discharge">Room Discharge</a></li>
+              <li><a class="dropdown-item" routerLink="/admin/admin-view-transfer">Room Transfer</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav-item">
+          <div class="dropdown">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false" style="border-radius: 40px" id="rooms">
+              Rooms
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/admin/admin-rooms/economy">Available</a></li>
+              <li><a class="dropdown-item" routerLink="/admin/adminAddRooms">Add</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <div class="dropdown">
+            <button class="btn btn-secondary btn-sm dropdown-toggle mx-3" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false" id="viewReq">
+              <i class="bx bxs-user-circle"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <!-- <li><a class="dropdown-item" routerLink="/admin/admin-profile">Profile</a></li>
+              <hr /> -->
+              <li><a class="dropdown-item" routerLink="login" (click)="logout()">Log out</a></li>
+              <li><a class="dropdown-item" routerLink="#">Delete account</a></li>
+            </ul>
+          </div>
+        </div>
+      </ul>
+
+
+    </div>
+
+
+
+  </div>
+</nav>

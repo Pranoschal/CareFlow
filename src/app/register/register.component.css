@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+#bodyComp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: url('../../assets/germ_high.gif');
+  background-size: cover;
+  background-position: center;
+  height: 850px;
+}
+
+.wrapper {
+  width: 550px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(40px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  color:rgb(88, 79, 79);
+  border-radius: 10px;
+  padding: 30px 40px;
+  height: 800px;
+
+
+
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #353333;
+  padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+  color: #494747;
+}
+
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: black;
+}
+
+.wrapper .remember-forget {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+
+}
+
+.remember-forget label input {
+  accent-color: #fff;
+  margin-right: 3px;
+}
+
+.remember-forget a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember-forget a:hover {
+  text-decoration: underline;
+}
+
+.wrapper .btn {
+  width: 100%;
+  height: 45px;
+  background: #cecada;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+
+  font-weight: 600;
+}
+
+.wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.register-link p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.register-link p a:hover {
+  text-decoration: underline;
+}
+
+#input1 {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+#input1 i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+
+
+
+.passVal {
+  max-width: 100%;
+
+}
+
+.green-tick {
+  color: green;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.red-cross {
+  color: red;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+
+.error {
+  color: red;
+  font-size: x-small;
+}
+
+select {
+
+  background: transparent;
+
+  border: 2px solid rgba(255, 255, 255, .2);
+}
+
+
+
+
+.passVal {
+  max-width: 100%;
+}
+
+
+
+.green-tick {
+  color: green;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+
+
+.red-cross {
+  color: red;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+option{
+  background: transparent;
+}
+
+#fname{
+  margin: 0;
+}

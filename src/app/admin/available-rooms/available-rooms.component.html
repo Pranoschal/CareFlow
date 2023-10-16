@@ -1,0 +1,60 @@
+
+
+    <div class="d-flex">
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;" id="sidebar">
+            <a routerLink="economy" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <span class="fs-4 disabled">Rooms Available</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li>
+                    <a routerLink="economy" class="nav-link link-dark" id="change">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#speedometer2"></use>
+                        </svg>
+                        Economy
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="economy-plus" class="nav-link link-dark" id="change">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#table"></use>
+                        </svg>
+                        Economy Plus
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="twin-sharing" class="nav-link link-dark" id="change">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#grid"></use>
+                        </svg>
+                        Twin Sharing
+                    </a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="deluxe" class="nav-link link-dark" id="change">
+                      <svg class="bi me-2" width="16" height="16">
+                          <use xlink:href="#speedometer2"></use>
+                      </svg>
+                      Deluxe
+                  </a>
+              </li>
+                <li>
+                    <a routerLink="premium" class="nav-link link-dark" id="change">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#people-circle"></use>
+                        </svg>
+                        Premium
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <router-outlet></router-outlet>
+
+    </div>
+

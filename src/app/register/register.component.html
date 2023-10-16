@@ -1,0 +1,382 @@
+<div id="bodyComp">
+  <div class="wrapper">
+    <form (ngSubmit)="onSignup()" [formGroup]="signup_form">
+      <h1>Register patient</h1>
+      <div class="row">
+        <!-- fname  -->
+        <div class="col-lg-6">
+          <!-- fname -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="input-box">
+                <input
+                  type="text"
+                  formControlName="fname"
+                  name="fname"
+                  id="fname"
+                  [(ngModel)]="registered.fname"
+                  placeholder="Enter First Name"
+                  required
+                />
+                <i class="bx bxs-user"></i>
+              </div>
+            </div>
+          </div>
+          <!-- fname validation -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div
+                *ngIf="
+                  signup_form.controls['fname'].invalid &&
+                  (signup_form.controls['fname'].touched ||
+                    signup_form.controls['fname'].dirty)
+                "
+              >
+                <div *ngIf="signup_form.controls['fname'].errors?.['required']">
+                  <small class="error"
+                    ><em>*First Name Can't Be Empty.</em></small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--  lname -->
+        <div class="col-lg-6">
+          <!-- fname -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="input-box">
+                <input
+                  type="text"
+                  formControlName="lname"
+                  name="lname"
+                  id="lname"
+                  [(ngModel)]="registered.lname"
+                  placeholder="Enter Last Name"
+                  required
+                />
+                <i class="bx bxs-user"></i>
+              </div>
+            </div>
+          </div>
+          <!-- fname validation -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div
+                *ngIf="
+                  signup_form.controls['lname'].invalid &&
+                  (signup_form.controls['lname'].touched ||
+                    signup_form.controls['lname'].dirty)
+                "
+              >
+                <div *ngIf="signup_form.controls['lname'].errors?.['required']">
+                  <small class="error"
+                    ><em>*Last Name Can't Be Empty</em></small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="input-box">
+        <input
+          type="number"
+          formControlName="contact"
+          name="contact"
+          id="contact"
+          [(ngModel)]="registered.contact"
+          placeholder="Enter Contact No"
+          required
+        />
+        <div
+          *ngIf="
+            signup_form.controls['contact'].invalid &&
+            (signup_form.controls['contact'].touched ||
+              signup_form.controls['contact'].dirty)
+          "
+        >
+          <div *ngIf="signup_form.controls['contact'].errors?.['required']">
+            <small class="error"><em>*Contact Number Can't Be Empty</em></small>
+          </div>
+          <div *ngIf="signup_form.controls['contact'].errors?.['pattern']">
+            <small class="error"
+              ><em>*Contact Number Must Be 10 Digits</em></small
+            >
+          </div>
+        </div>
+        <i class="bx bxs-phone-call"></i>
+      </div>
+      <div class="input-box">
+        <input
+          type="email"
+          formControlName="email"
+          name="email"
+          id="email"
+          [(ngModel)]="registered.email"
+          placeholder="Enter Email"
+          (ngModelChange)="check_email_taken()"
+          required
+        />
+        <div
+          *ngIf="
+            signup_form.controls['email'].invalid &&
+            (signup_form.controls['email'].touched ||
+              signup_form.controls['email'].dirty)
+          "
+        >
+          <div *ngIf="signup_form.controls['email'].errors?.['required']">
+            <small class="error"><em>*Email Can't Be Empty</em></small>
+          </div>
+          <div *ngIf="signup_form.controls['email'].errors?.['pattern']">
+            <small class="error"><em>*Enter Valid Email</em></small>
+          </div>
+        </div>
+
+        <div *ngIf="this.lr.isPatientRegistered">
+          <small class="error"><em>*Email Already Registered</em></small>
+        </div>
+
+        <i class="bx bxl-gmail"></i>
+      </div>
+      <div class="container" style="margin-bottom: 60px">
+        <div class="input-box">
+          <label
+            for="bloodGroup"
+            style="color: rgb(16, 14, 14); margin-left: 10px"
+            >Select Blood Group</label
+          >
+          <select
+            class="form-select"
+            formControlName="bloodGroup"
+            name="bloodGroup"
+            id="bloodGroup"
+            aria-label="Default select example"
+            [(ngModel)]="registered.bloodGroup"
+            style="height: 45px; border-radius: 20px; text-align: center"
+          >
+            <!-- <option disabled selected>Select Blood Group</option> -->
+            <!-- <hr> -->
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+          </select>
+          <div
+            *ngIf="
+              signup_form.controls['bloodGroup'].invalid &&
+              signup_form.controls['bloodGroup'].touched
+            "
+          >
+            <div>
+              <div
+                *ngIf="signup_form.controls['bloodGroup'].errors?.['required']"
+              >
+                <small class="error"><em> *Select Your Blood Group</em></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="input-box">
+          <input
+            type="password"
+            formControlName="pass"
+            name="pass"
+            id="pass"
+            [(ngModel)]="registered.password"
+            placeholder="Enter Password"
+          />
+
+          <div
+              *ngIf="
+              signup_form.controls['pass'].invalid &&
+              (signup_form.controls['pass'].touched ||
+              signup_form.controls['pass'].dirty)">
+
+            <div class="passVal">
+              <div *ngIf="signup_form.controls['pass'].errors?.['required']">
+                <small class="error"
+                  ><em>
+                    <span class="red-cross">&#10006;</span> Password Can't Be
+                    Empty</em
+                  ></small
+                >
+              </div>
+
+              <div
+                *ngIf="
+                  signup_form.get('pass')?.hasError('missingUppercase') &&
+                  signup_form.controls['pass'].value
+                "
+              >
+                <small class="error"
+                  ><em>
+                    <span class="red-cross">&#10006;</span> Password must
+                    contain at least one uppercase letter.</em
+                  ></small
+                >
+              </div>
+
+              <div
+                *ngIf="
+                  signup_form.get('pass')?.hasError('missingUppercase') ===
+                  false
+                "
+              >
+                <small class="error"
+                  ><em>
+                    <span class="green-tick">&#10004;</span> Password contains
+                    at least one uppercase letter.</em
+                  ></small
+                >
+              </div>
+
+              <div
+                *ngIf="
+                  signup_form.get('pass')?.hasError('missingLowercase') &&
+                  signup_form.controls['pass'].value
+                "
+              >
+                <small class="error"
+                  ><em
+                    ><span class="red-cross">&#10006;</span> Password must
+                    contain at least one lowercase letter.</em
+                  ></small
+                >
+              </div>
+
+              <div
+                *ngIf="
+                  signup_form.get('pass')?.hasError('missingLowercase') ===
+                  false
+                "
+              >
+                <small class="error"
+                  ><em>
+                    <span class="green-tick">&#10004;</span> Password must
+                    contain at least one lowercase letter.</em
+                  ></small
+                >
+              </div>
+
+              <div
+                *ngIf="
+                  signup_form.get('pass')?.hasError('missingDigit') &&
+                  signup_form.controls['pass'].value
+                "
+              >
+                <small class="error"
+                  ><em>
+                    <span class="red-cross">&#10006;</span> Password must
+                    contain at least one digit.</em
+                  ></small
+                >
+              </div>
+
+              <div
+                *ngIf="
+                  signup_form.get('pass')?.hasError('missingDigit') === false
+                "
+              >
+                <small class="error"
+                  ><em>
+                    <span class="green-tick">&#10004;</span> Password must
+                    contain at least one digit.</em
+                  ></small
+                >
+              </div>
+
+              <div
+                *ngIf="
+                  signup_form.get('pass')?.hasError('missingSpecialChar') &&
+                  signup_form.controls['pass'].value
+                "
+              >
+                <small class="error"
+                  ><em>
+                    <span class="red-cross">&#10006;</span> Password must
+                    contain at least one special character.</em
+                  ></small
+                >
+              </div>
+
+              <div
+                *ngIf="
+                  signup_form.get('pass')?.hasError('missingSpecialChar') ===
+                  false
+                "
+              >
+                <small class="error"
+                  ><em
+                    ><span class="green-tick">&#10004;</span> Password must
+                    contain at least one special character.</em
+                  ></small
+                >
+              </div>
+
+              <div
+                *ngIf="
+                  signup_form.get('pass')?.hasError('invalidLength') &&
+                  signup_form.controls['pass'].value
+                "
+              >
+                <small class="error"
+                  ><em>
+                    <span class="red-cross">&#10006;</span> Password must be at
+                    least 8 characters long.</em
+                  ></small
+                >
+              </div>
+
+              <div
+                *ngIf="
+                  signup_form.get('pass')?.hasError('invalidLength') === false
+                "
+              >
+                <small class="error"
+                  ><em>
+                    <span class="green-tick">&#10004;</span> Password must be at
+                    least 8 characters long.</em
+                  ></small
+                >
+              </div>
+            </div>
+
+            <div *ngIf="signup_form.get('pass')?.valid">
+              <small class="error"
+                ><em>
+                  <span class="green-tick">&#10004;</span> Password is
+                  valid.</em
+                ></small
+              >
+            </div>
+          </div>
+
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+      </div>
+
+      <div class="container" style="margin-top: 150px">
+        <button
+          type="submit"
+          class="btn"
+          [disabled]="signup_form.invalid || this.lr.isPatientRegistered"
+        >
+          Register
+        </button>
+      </div>
+      <div class="register-link">
+        <p>Already have an account?<a routerLink="/login">Login</a></p>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,282 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "roomName": "Economy Room",
+      "totalRooms": 6,
+      "availableRooms": 6,
+      "bookedRooms": 0,
+      "price": 2100,
+      "room": [
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 1,
+          "entry-timestamp": "",
+          "exit-timestamp": "",
+          "name": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 2,
+          "entry-timestamp": "",
+          "exit-timestamp": "",
+          "name": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 3,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 4,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 5,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 6,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "roomName": "Economy Plus Room",
+      "totalRooms": 8,
+      "availableRooms": 8,
+      "bookedRooms": 0,
+      "price": 2600,
+      "room": [
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 1,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 2,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 3,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 4,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 5,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 6,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 7,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 8,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "roomName": "Twin Sharing Room",
+      "totalRooms": 6,
+      "availableRooms": 6,
+      "bookedRooms": 0,
+      "price": 3200,
+      "room": [
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 1,
+          "entry-timestamp": "",
+          "exit-timestamp": "",
+          "name": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 2,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 3,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 4,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 5,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 6,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "roomName": "Deluxe Room",
+      "totalRooms": 6,
+      "availableRooms": 6,
+      "bookedRooms": 0,
+      "price": 5800,
+      "room": [
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 1,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 2,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 3,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 4,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 5,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 6,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "roomName": "Premium Deluxe Room",
+      "totalRooms": 6,
+      "availableRooms": 6,
+      "bookedRooms": 0,
+      "price": 11000,
+      "room": [
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 1,
+          "entry-timestamp": "",
+          "exit-timestamp": "",
+          "name": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 2,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 3,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 4,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 5,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        },
+        {
+          "pid": 0,
+          "pname": "",
+          "roomNo": 6,
+          "entry-timestamp": "",
+          "exit-timestamp": ""
+        }
+      ]
+    }
+  ]
+}

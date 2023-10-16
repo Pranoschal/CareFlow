@@ -1,0 +1,18 @@
+
+
+.card{
+  margin: 30px;
+
+}
+
+img{
+  margin-left:50px ;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.card-text{
+  text-align: justify;
+}

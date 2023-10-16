@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Skranji&display=swap');
+#care{
+    font-family: 'Skranji', cursive;
+}
+
+
+#viewReq{
+    background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #353333;
+}
+#rooms{
+    background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #353333;
+}
+a:hover{
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+

@@ -1,0 +1,31 @@
+<div *ngIf="isLoading; else data">
+  <div class="containerSpinner">
+    <div class="spinner"></div>
+  </div>
+</div>
+
+<ng-template #data>
+  <div class="row">
+    <h1 style="text-align: center;"><em>Room transfer requests</em></h1>
+    <div class="col-sx-12 col-lg-6">
+      <app-display-rooms (sendEmitter)="receiveRoomNo($event)"></app-display-rooms>
+    </div>
+    <div class="col-sx-12 col-lg-6">
+      <div *ngFor="let data of transferData" id="main" class="card my-2 mx-5" >
+        <div class="card-body">
+
+            <h4 class="card-text">Name Of Patient : {{data.pfname}} {{data.plname}}</h4>
+            <p class="card-text">Current Room : {{data.fromRoom}}</p>
+            <p class="card-text">Requested Room : {{data.toRoom}}</p>
+            <button class="btn btn-outline-primary mx-2 my-2" (click)="approve(data.pid,data.id,data.fromRoomID,data.toRoomID,data.pfname,data.plname)" [disabled]="!vacantRoomNo || !(data.toRoomID==roomCategory)">Approve Request</button>
+            <button class="btn btn-outline-danger mx-2 my-2 " (click)="deny(data.id,data.pid)">Deny Request</button>
+        </div>
+    </div>
+    <div class="container" id="emptyGIF" *ngIf="transferData.length==0">
+      <h3 style="text-align: center; color: grey; font-family: 'Shantell Sans', cursive; font-weight: bolder;">No pending requests</h3>
+      <!-- <h3 style="text-align: center;">No request yet</h3> -->
+    </div>
+    </div>
+  </div>
+
+</ng-template>

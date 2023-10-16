@@ -1,0 +1,56 @@
+<div class="row" style="margin-top: 50px">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-8 col-sx-8">
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8">
+        <div class="input-group">
+          <select class="form-select" name="searchoption" id="searchoption" [(ngModel)]="searchoption" required>
+            <option value="1">Search By ID</option>
+            <option value="2">Search By Patient Name</option>
+          </select>
+
+          <input type="search" class="form-control rounded" placeholder="Search patient : " aria-label="Search"
+            [(ngModel)]="id" />
+          <button type="button" (click)="searchPatient()" class="btn btn-primary rounded mx-2 my-2">
+            search
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-2"></div>
+    </div>
+    <div *ngIf="isLoading; else data">
+      <div class="containerSpinner">
+        <div class="spinner"></div>
+      </div>
+    </div>
+
+    <ng-template #data>
+      <div class="row">
+        <div class="col-lg-12 col-sx-12">
+          <div class="card w-100 my-4" style="height: 40vh" id="patient-details">
+            <div *ngFor="let data of searchedPatient">
+              <div *ngIf="searchedPatient">
+                <div class="card-body">
+                  <h3 class="card-subtitle mx-4 text-muted my-3">First Name: <em> {{data.fname}}</em> </h3>
+                  <h3 class="card-subtitle mx-4 text-muted my-3">Last Name: <em> {{data.lname}}</em> </h3>
+                  <h3 class="card-subtitle mx-4 text-muted my-3">Patient's email: <em> {{data.email}}</em> </h3>
+                  <h3 class="card-subtitle mx-4 text-muted my-3">Patient's contact no: <em> {{data.contact}}</em> </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div *ngIf="id && !searchedPatient">
+                <h3>No Data</h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+  </div>
+  <div class="col-lg-2"></div>
+</div>

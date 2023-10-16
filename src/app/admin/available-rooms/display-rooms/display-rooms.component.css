@@ -1,0 +1,62 @@
+
+.container {
+    max-width: 95%;
+    height: 75%;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.roomscollection {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.bookedroom {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 3px;
+    text-align: center;
+    background-color: rgb(240, 139, 139)
+    /* background-image: url('../../../../assets/bed.svg'); */
+}
+
+.vacantroom {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 3px;
+    text-align: center;
+    background-color: rgb(110, 217, 110);
+}
+
+
+
+.custom-dropdown {
+    display: inline-block;
+    position: relative;
+
+}
+
+.dropdown select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+.mainConatiner{
+  height: 500px;
+}
+.body{
+  height: 500px;
+}
+
+.popover-item{
+  background-color: grey;
+  border: 1px solid blanchedalmond;
+}

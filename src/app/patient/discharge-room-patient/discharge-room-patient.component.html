@@ -1,0 +1,45 @@
+<div class="container my-3 rounded" id="mainContainer">
+  <div class="row">
+    <div class=" my-3  ">
+      <div class="col-lg-12 p-2 bg-primary text-white rounded opacity-50 " style="background-color: #007bff; opacity: 0.5;  ">
+        <h1 style="text-align: center;">Request Discharge</h1>
+      </div>
+    </div>
+    <hr>
+    <div class="col-lg-6">
+      <div class="container my-3">
+        <div class="row">
+          <div class="col-lg-12">
+          <div class="card my-3 " style="height: 60vh;">
+            <div class="card-body" >
+              <p class="card-text"> Patient Name : {{ dischargeData.name }} </p>
+              <p class="card-text"> Patient Age : {{ dischargeData.age }} </p>
+              <p class="card-text"> Room Category : {{ dischargeData.roomCategory }} </p>
+              <p class="card-text"> Room Number : {{ dischargeData.roomNo }} </p>
+              <button
+              type="button"
+              class="btn btn-outline-primary my-3"
+              (click)="postDischargeRequest()"
+            >
+              Request Discharge
+            </button>
+            </div>
+          </div>
+         </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-6 ">
+      <div class="container my-2 ">
+
+        <img
+                src="https://patientexperience.mediclinicinfohub.co.za/resources/front-end/images/MC_LOOP_08_VISITORS_v1.gif"
+                alt="Hospital Image"
+                class="discharge-image my-3"
+               style="height: 60vh; width: 100%;"
+              />
+      </div>
+    </div>
+  </div>
+</div>

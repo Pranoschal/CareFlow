@@ -1,0 +1,90 @@
+<div class="container my-3">
+  <div class=" p-2 bg-primary text-white rounded opacity-50">
+    <h1 class="text-center" style="color: white;">Request Transfer</h1>
+  </div>
+
+  <hr />
+
+  <div class="row">
+    <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="mb-3 element-spacing">
+              <label for="patientName" class="form-label">Patient First Name</label>
+
+              <input type="text" class="form-control" id="patientName" [(ngModel)]="transferRoomData.pfname"
+                placeholder="Enter First Name" value="Something" />
+
+              <label for="patientName" class="form-label">Patient Last Name</label>
+
+              <input type="text" class="form-control" id="patientName" [(ngModel)]="transferRoomData.plname"
+                placeholder="Enter Last Name" />
+            </div>
+
+            <div class="mb-3 element-spacing">
+              <label for="patientName" class="form-label">Patient ID</label>
+
+              <input type="text" class="form-control" id="patientName" [(ngModel)]="transferRoomData.pid"
+                placeholder="Enter Your Id" />
+            </div>
+
+            <div class="mb-3 element-spacing">
+              <label for="patientAge" class="form-label">Age</label>
+
+              <input type="number" class="form-control" id="patientAge" [(ngModel)]="transferRoomData.page"
+                placeholder="Age" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Transfer Details</h2>
+
+            <div class="mb-3 element-spacing">
+              <label for="fromRoom" class="form-label">From Room</label>
+              <select class="form-select" name="fromRoom" id="fromRoom" [(ngModel)]="transferRoomData.fromRoom">
+                <option selected>{{ transferRoomData.fromRoom }}</option>
+              </select>
+            </div>
+
+            <div class="mb-3 element-spacing">
+              <label for="toRoom" class="form-label">To Room</label>
+
+              <select class="form-select" name="toRoom" id="toRoom" [(ngModel)]="transferRoomData.toRoom" (click)="confirmTransfer()" required>
+
+                <option>Economy Room</option>
+                <option>Economy Plus Room</option>
+                <option>Twin Sharing Room</option>
+                <option>Premium Deluxe Room</option>
+                <option>Deluxe Room</option>
+
+              </select>
+            </div>
+
+            <!-- <div class="mb-3 element-spacing">
+
+                            <label for="transferTime" class="form-label">Transfer Time</label>
+
+                            <input type="datetime-local" class="form-control" id="transferTime" [(ngModel)]="transferRoomData.transferTime">
+
+            </div> -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <button class="btn btn-outline-primary me-2" (click)="postTransferRequest()" [disabled]="disableBtn">
+              Confirm Transfer
+            </button>
+
+            <a class="btn btn-outline-primary ml-2" routerLink="/patient/patient-home">Back to Home</a>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 right-image">
+      <img src="https://patientexperience.mediclinicinfohub.co.za/resources/front-end/images/MC_LOOP_08_VISITORS_v1.gif"
+        alt="Patient Image" />
+    </div>
+  </div>
+</div>

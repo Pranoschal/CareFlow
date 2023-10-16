@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+#mainContainer{
+    background: url('../../../assets/germ_test.gif');
+    font-size: 14px;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+input,select,textarea{
+  opacity: 50%;
+}
+
+.anotherContainer {
+    width: 80%;
+    margin: auto;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    backdrop-filter: blur(50px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.contact-box {
+    background: transparent;
+    display: flex;
+}
+
+.contact-left {
+    flex-basis: 60%;
+    padding: 40px 60px;
+}
+
+
+.contact-right {
+    flex-basis: 60%;
+    padding: 40px;
+    background: transparent;
+    color: #000000;
+    text-align: center;
+    border-left: 2px solid rgb(147, 145, 145);
+}
+
+h1 {
+    margin-bottom: 10px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.container p {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1291px) {
+    .contact-box {
+        flex-direction: column;
+    }
+    .contact-right{
+        border-top: 2px solid rgb(147, 145, 145);
+        border-left: none;
+
+    }
+
+}
+#contactNumber::placeholder{
+    padding-left: 10px;
+}
+#name::placeholder{
+    padding-left: 10px;
+}
+#email::placeholder{
+    padding-left: 10px;
+}
+@media screen and (max-width: 830px) {
+
+
+    .contact-right{
+        border-top: 2px solid rgb(147, 145, 145);
+        border-left: none;
+
+    }
+}

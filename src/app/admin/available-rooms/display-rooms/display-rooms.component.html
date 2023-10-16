@@ -1,0 +1,47 @@
+<div class="body">
+
+    <!-- <div class="custom-dropdown">
+    </div> -->
+    <div class="row container">
+        <div class="col-md-6">
+          <label for="" class="form-label"> Select options form the dropdown: </label>
+            <select class="dropdown-select" [(ngModel)]="roomcategory">
+                <option value="" selected disabled>Select Room Catergory</option>
+                <option value="0">Economy Room</option>
+                <option value="1">Economy Plus Room</option>
+                <option value="2">Twin Sharing Room</option>
+                <option value="3">Deluxe Room</option>
+                <option value="4">Premium Deluxe</option>
+            </select>
+        </div>
+
+        <p style="text-align: center; color: grey; font-family: 'Shantell Sans', cursive; font-weight: bolder;">Showing results for {{rooms[roomcategory]?.roomName}}:</p>
+<hr>
+        <div class="roomscollection col-lg-12">
+            <!-- <hr> -->
+            <div class="roomname" *ngFor="let r of rooms[roomcategory]?.room">
+                <div *ngIf="(r.pid == 0)">
+                    <div class="vacantroom" (click)="sendRoomNo(roomcategory,r.roomNo)">{{r.roomNo}}</div>
+                </div>
+                <div *ngIf="(r.pid !== 0)">
+                    <div class="bookedroom"  (mouseenter)="onHover(r.pname,r.roomNo)" (mouseleave)="offHover()" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Hi"> {{r.roomNo}}</div>
+                    <div style="
+                    background-color: rgb(54, 105, 146);
+
+                    border: 1px solid whitesmoke;
+                    border-radius: 10px;
+                    height: 30px;
+                    width: 300px;
+                    z-index: 1;
+                    text-align: center;
+
+                    position: absolute;
+                " *ngIf="patientName && patientRoomNo==r.roomNo">
+                      <small style=" color: white; font-family: 'Shantell Sans', cursive; font-weight: bolder;" >
+                        Patient Name : {{patientName}}
+                      </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
